@@ -675,25 +675,34 @@ ABOUT
     position:relative;
 }
 
+/* =========================
+EXPERIENCE BADGE
+========================= */
+
 .experience-badge{
 
     position:absolute;
 
+    top:50%;
+
     left:50%;
 
-    bottom:25px;
+    transform:translate(-50%, -50%);
 
-    transform:translateX(-50%);
+    width:270px;
 
-    width:220px;
-
-    height:220px;
+    height:270px;
 
     border-radius:50%;
 
-    border:5px solid #c68d1a;
+    background:
+    radial-gradient(
+        circle,
+        #0f0f0f 0%,
+        #050505 100%
+    );
 
-    background:#111;
+    border:6px solid #c79a2b;
 
     display:flex;
 
@@ -702,15 +711,77 @@ ABOUT
     justify-content:center;
 
     align-items:center;
+
+    z-index:50;
+
+    box-shadow:
+    0 0 25px rgba(199,154,43,.35),
+    0 0 80px rgba(0,0,0,.7);
+
+    backdrop-filter:blur(4px);
 }
+
+
+
+/* GOLD OUTER RING */
+
+.experience-badge::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:-14px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(199,154,43,.35);
+}
+
+
+
+/* 8+ NUMBER */
 
 .experience-badge h2{
 
-    font-size:70px;
+    font-size:110px;
+
+    line-height:1;
 
     font-family:'Oswald',sans-serif;
+
+    font-weight:700;
+
+    color:white;
+
+    letter-spacing:-4px;
+
+    margin-bottom:10px;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,.45);
 }
 
+
+
+/* TEXT */
+
+.experience-badge p{
+
+    color:#d4af37;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    text-align:center;
+
+    font-family:'Roboto',sans-serif;
+}
 
 
 /* =========================
