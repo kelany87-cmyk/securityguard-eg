@@ -820,33 +820,37 @@ WHY US
 
 
 /* =========================
-PARTNERS
+PARTNERS GRID
 ========================= */
 
-.partners-slider{
-    overflow:hidden;
+.partners-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(11,1fr);
+
+    gap:14px;
+
+    margin-top:50px;
+
+    align-items:center;
 }
 
-.partners-track{
 
-    display:flex;
 
-    gap:20px;
-
-    width:max-content;
-
-    animation:partnersMove 40s linear infinite;
-}
+/* =========================
+PARTNER BOX
+========================= */
 
 .partner-box{
 
-    width:240px;
+    width:100%;
 
-    height:120px;
+    height:85px;
 
-    background:#0d0d0d;
+    background:#0b0b0b;
 
-    border:1px solid #a36f16;
+    border:1px solid rgba(255,255,255,.08);
 
     display:flex;
 
@@ -854,40 +858,86 @@ PARTNERS
 
     align-items:center;
 
-    flex-shrink:0;
+    padding:10px;
 
     transition:.3s;
+
+    overflow:hidden;
 }
 
 .partner-box:hover{
 
-    border-color:#ff0000;
+    border-color:#c79a2b;
 
-    transform:translateY(-8px);
+    transform:translateY(-4px);
 }
+
+
+/* =========================
+PARTNER IMAGE
+========================= */
 
 .partner-box img{
 
-    width:90%;
+    width:100%;
 
-    height:90%;
+    height:100%;
 
     object-fit:contain;
+
+    opacity:.9;
+
+    transition:.3s;
 }
 
-@keyframes partnersMove{
+.partner-box:hover img{
 
-    0%{
-        transform:translateX(0);
-    }
+    filter:grayscale(0%);
 
-    100%{
-        transform:translateX(-50%);
+    opacity:1;
+}
+
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1400px){
+
+    .partners-grid{
+
+        grid-template-columns:repeat(6,1fr);
     }
 
 }
 
+@media(max-width:992px){
 
+    .partners-grid{
+
+        grid-template-columns:repeat(4,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .partners-grid{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    .partners-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
 
 /* =========================
 FOOTER
